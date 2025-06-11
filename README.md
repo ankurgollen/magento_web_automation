@@ -45,23 +45,22 @@ npm install
 
 Create a `.env` file at the root level with the following keys:
 
-```bash
+```env
 CYPRESS_username=testaccount001@email.com
 CYPRESS_password=Password123
 ```
 
 **Note:** Do not commit `.env` to version control.
 
-### 3. 📄 Add test data
+### 3. 📄 Test data
 
 Test data is maintained in:
 
 * `cypress/fixtures/orderData.json` for product info
-* Additional files like `.csv` or `.xlsx` can be added with corresponding utilities
 
 ---
 
-## ▶ Running the Tests
+## Running the Tests
 
 ### Run all tests:
 
@@ -71,10 +70,13 @@ npx cypress run --env username=testaccount002@email.com password=Password123
 
 This will:
 
-* Run all specs
-* Merge reports
-* Generate a single HTML report in `cypress/reports/mochawesome/index.html`
-* Reports are named in a sequesntial way with (index.html, index_001.html....). Please check the generated report for the specific test run at near the bottom of your terminal output.
+\* Run all specs
+
+\* Merge reports
+
+\* Generate a single HTML report in \`cypress/reports/mochawesome/index.html\`
+
+\* Reports are named in a sequesntial way with (index.html, index\_001.html....). Please check the generated report for the specific test run at near the bottom of your terminal output.
 
 ### Run a single spec:
 
