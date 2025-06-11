@@ -5,7 +5,7 @@ import SearchResultsPage from '../pages/SearchResultsPage';
 
 describe('Search Results Page Tests', () => {
 
-    const validSearchTerm = 'jacket';
+    const validSearchTerm = 'tee';
     const invalidSearchTerm = 'nonexistingproduct';
 
     it('should display results for a valid search term', () => {
@@ -22,18 +22,5 @@ describe('Search Results Page Tests', () => {
         TopNavBar.searchFor(invalidSearchTerm);
         SearchResultsPage.verifyNoResultsFound();
     });
-
-    //   it('should allow sorting of search results', () => {
-    //     cy.visit('/');
-    //     TopNavBar.searchFor(validSearchTerm);
-
-    //     // Sort by price: low to high
-    //     SearchResultsPage.selectSortBy('Price');
-    //     SearchResultsPage.getSortDirectionButton().click(); // Click to toggle sort direction
-
-    //     // Add an assertion here based on visual sorting (optional)
-    //     SearchResultsPage.verifyResultsVisible();
-    //     SearchResultsPage.verifyPricesSortedAccordingToDirection();
-    //   });
 
 });

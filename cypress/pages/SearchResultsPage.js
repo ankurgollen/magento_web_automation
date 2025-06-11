@@ -62,49 +62,6 @@ class SearchResultsPage {
         return cy.get('a[data-role="direction-switcher"]:visible').first().should('be.visible').click();
     }
 
-    verifyPricesSortedAccordingToDirection() {
-        cy.log('Verifying price sort order based on direction');
-        cy.logStep('Checked sort direction and validated price order accordingly');
-        this.getSortDirectionButton()
-            .invoke('attr', 'data-value')
-            .then((direction) => {
-                cy.log(`Detected sort direction: ${direction}`);
-                if (direction === 'asc') {
-                    this.assertPricesAscending();
-                } else if (direction === 'desc') {
-                    this.assertPricesDescending();
-                } else {
-                    throw new Error(`Unexpected sort direction: ${direction}`);
-                }
-            });
-    }
-
-    assertPricesAscending() {
-        cy.log('Asserting prices are in ascending order');
-        cy.logStep('Validated product prices are sorted low to high');
-        cy.get('.price')
-            .then(($prices) => {
-                const priceValues = [...$prices].map(el =>
-                    parseFloat(el.innerText.replace(/[^0-9.]/g, ''))
-                );
-                const sorted = [...priceValues].sort((a, b) => a - b);
-                expect(priceValues).to.deep.equal(sorted);
-            });
-    }
-
-    assertPricesDescending() {
-        cy.log('Asserting prices are in descending order');
-        cy.logStep('Validated product prices are sorted high to low');
-        cy.get('.price')
-            .then(($prices) => {
-                const priceValues = [...$prices].map(el =>
-                    parseFloat(el.innerText.replace(/[^0-9.]/g, ''))
-                );
-                const sorted = [...priceValues].sort((a, b) => b - a);
-                expect(priceValues).to.deep.equal(sorted);
-            });
-    }
-
     clickProductByName(productName) {
         cy.log(`Clicking product link for: ${productName}`);
         cy.logStep(`Clicked on product link for ${productName}`);
