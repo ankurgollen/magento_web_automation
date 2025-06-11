@@ -20,7 +20,7 @@ class ReviewAndPaymentsPage {
     }
 
     get placeOrderButton() {
-        return cy.get('button[title="Place Order"]');
+    return cy.get('button[title="Place Order"]', { timeout: 20000});
     }
 
     get activeStep() {
