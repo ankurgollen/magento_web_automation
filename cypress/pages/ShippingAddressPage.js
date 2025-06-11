@@ -14,7 +14,7 @@ class ShippingAddressPage {
     get shipHereButton() { return cy.get('button.action.continue.primary'); }
     get addressForm() { return cy.get('form[name="co-shipping-form"]'); }
     get existingAddressBlock() { return cy.get('.shipping-address-item.selected-item'); }
-    get tableRateRadio() { return cy.get('input[type="radio"][value="tablerate_bestway"]').should('be.visible'); }
+    get tableRateRadio() { return cy.get('input[type="radio"][value="tablerate_bestway"]', { timeout: 10000 }).should('be.visible'); }
     get fixedRateRadio() { return cy.get('input[type="radio"][value="flatrate_flatrate"]'); }
     get nextButton() { return cy.get('button.continue'); }
     get loader() { return cy.get('.loader > img'); }

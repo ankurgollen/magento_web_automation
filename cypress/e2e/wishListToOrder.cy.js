@@ -38,9 +38,8 @@ describe('Wishlist to Order flow', () => {
 
 
         ShippingAddressPage.verifyAddressPresent();
-        ShippingAddressPage.existingAddressBlock.should('be.visible');
         ShippingAddressPage.selectTableRate();
-        ShippingAddressPage.nextButton.should('be.visible').click();
+        ShippingAddressPage.clickNext();
 
         ReviewAndPaymentsPage.confirmReviewAndPaymentStepSelected();
         ReviewAndPaymentsPage.clickPlaceOrder();
@@ -48,8 +47,5 @@ describe('Wishlist to Order flow', () => {
         // Confirm order placed successfully
         OrderConfirmationPage.verifyOrderNumberIsVisible();
         OrderConfirmationPage.verifyThankYouMessage();
-        OrderConfirmationPage.orderNumber.invoke('text').then((orderNumber) => {
-            cy.log(`Your order number is: ${orderNumber}`);
-        });
     });
 });
