@@ -39,14 +39,20 @@ magento_web_automation/
 
 ### 🔧 Setup Instructions
 
-#### 1. 📦 Install dependencies
+#### 1. Clone the Repo  
+
+```bash
+git clone git@github.com:ankurgollen/magento_web_automation.git
+```
+
+#### 2. 📦 Install dependencies
 
 ```bash
 cd  //to the project repo
 npm install
 ```
 
-#### 2. 🔐 Create `.env` file
+#### 3. 🔐 Create `.env` file
 
 Create a `.env` file at the root level with the following keys:
 
@@ -57,7 +63,7 @@ CYPRESS_password=Password123
 
 **Note:** Do not commit `.env` to version control.
 
-#### 3. 📄 Test data
+#### 4. 📄 Test data
 
 Test data is maintained in:
 
