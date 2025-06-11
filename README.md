@@ -9,6 +9,7 @@ This project is a Cypress-based end-to-end automation test framework for the [Ma
 
 ### ✅ Features & Requirements Met
 
+
 * **Page Object Model** used to encapsulate UI actions and locators.
 * **Reporting integrated** using `cypress-mochawesome-reporter`.
 * **Test data from external files** using `fixtures/*.json`.
@@ -33,6 +34,9 @@ magento_web_automation/
 ├── .env                      # Environment variables file
 ├── package.json              # Project scripts & dependencies
 ├── README.md                 # Project documentation
+├── Task2 POSTMAN files       # Postman collections Repo
+├── Task3 Manual Tests        # Manual Tests Repo
+└── Task4 Performance Tests   # Performance Tests Doc
 ```
 
 ---
@@ -48,11 +52,17 @@ git clone git@github.com:ankurgollen/magento_web_automation.git
 #### 2. 📦 Install dependencies
 
 ```bash
-cd  //to the project repo
-npm install
+cd  magento_web_automation            // change directory to the project repo
+npm install                           // this will install dependencies
 ```
 
-#### 3. 🔐 Create `.env` file
+#### 3. Running the tests
+
+```bash
+npx cypress run --env username=testaccount002@email.com,password=Password123
+```
+
+#### 4. Working with `.env` file
 
 Create a `.env` file at the root level with the following keys:
 
@@ -60,10 +70,16 @@ Create a `.env` file at the root level with the following keys:
 CYPRESS_username=testaccount001@email.com
 CYPRESS_password=Password123
 ```
+After setting up .env you can run the test cases with the following command
+
+```bash
+npx cypress run 
+```
+
 
 **Note:** Do not commit `.env` to version control.
 
-#### 4. 📄 Test data
+###  📄 Test data
 
 Test data is maintained in:
 
@@ -93,12 +109,6 @@ This will:
 
 ```bash
 npx cypress run --spec "cypress/e2e/registration.cy.js"
-```
-
-#### Open Cypress GUI:
-
-```bash
-npx cypress open
 ```
 
 ---
@@ -133,12 +143,14 @@ Two test cases for Create Pet POST request are failing as they are returning **2
 
 ```
 ### Add Pet (POST) Test Cases
+
 1. POST Valid Pet Body Request - Tests adding a pet with all required fields
 2. POST Missing Required fields - Tests error handling when required fields are missing, this is FAILING 
 3. POST Empty Body - Tests error handling when sending an empty request body, this is FAILING 
 4. POST Bad Body Input - Tests error handling with malformed/invalid request body
 
 ### Get Pet (GET) Test Cases
+
 1. GET Valid PetId - Tests retrieving a pet with a valid ID
 2. GET Non-existing PetId - Tests error handling when requesting a non-existent pet ID
 3. GET Invalid PetId Format - Tests error handling with an invalid pet ID format
