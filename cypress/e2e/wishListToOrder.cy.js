@@ -13,7 +13,7 @@ describe('Wishlist to Order flow', () => {
         cy.fixture('orderData').as('products');
     });
 
-    it('should add product to wishlist and complete order from wishlist', function () {
+    it('should add product to wishlist and create order from wishlist', function () {
         const product = this.products[0]; // First product from fixture
 
         cy.login(); // Assumes custom command

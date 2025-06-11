@@ -11,7 +11,7 @@ describe('Place Order with Multiple Products', () => {
         cy.login();
     });
 
-    it('should add multiple products to cart using fixture data', () => {
+    it('should add multiple products to cart using fixture data and then create order', () => {
         loadOrderData().then((products) => {
             products.forEach(product => {
                 cy.visit('/');

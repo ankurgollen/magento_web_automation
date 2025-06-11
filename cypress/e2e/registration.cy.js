@@ -24,7 +24,7 @@ describe('Register Tests', () => {
 
   });
 
-  it('should login with created account', () => {
+  it('should login with newly created account', () => {
     CustomerLogin.visitLoginPage();
 
     CustomerLogin.fillForm({
