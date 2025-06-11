@@ -1,0 +1,27 @@
+# Cypress specific
+cypress/videos/
+cypress/screenshots/
+cypress/reports/
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage tools
+coverage/
+.nyc_output/
+
+# Output files
+*.html
+mochawesome.json
