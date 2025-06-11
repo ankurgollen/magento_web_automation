@@ -42,6 +42,7 @@ magento_web_automation/
 #### 1. 📦 Install dependencies
 
 ```bash
+cd  //to the project repo
 npm install
 ```
 
@@ -120,7 +121,7 @@ open cypress/reports/mochawesome/index_001.html
 
 ## Task 2: API Automaton with Postman
 
-For API Automation please find the exported POSTMAN collection under **Task2 files**. 
+For API Automation please find the exported POSTMAN collection under **Task2 Postman files**. 
 
 Two test cases for Create Pet POST request are failing as they are returning **200** whereas in Swagger it's mentioned they are supposed to return **405**.
 
@@ -139,8 +140,8 @@ Two test cases for Create Pet POST request are failing as they are returning **2
 
 ## Task 3: Manual Test Case Creation
 
-Attached a Word document file containing the testcases under **Task3 files** repository.
+Attached a Word document file containing the testcases under **Task3 Manual Tests** repository.
 
 ## Task 4: Performance Test
 
-Attached a Word document file containing the testcases under **Task4 files** repository.
+Attached a Word document file containing the testcases under **Task4 Performance Tests** repository.
