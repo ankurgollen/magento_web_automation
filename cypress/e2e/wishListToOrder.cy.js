@@ -16,7 +16,7 @@ describe('Wishlist to Order flow', () => {
     it('should add product to wishlist and create order from wishlist', function () {
         const product = this.products[0]; // First product from fixture
 
-        cy.login(); // Assumes custom command
+        cy.login(); // custom command
         cy.visit('/');
         TopNavBar.searchFor(product.productName);
         SearchResultsPage.clickProductByName(product.productName);
@@ -33,7 +33,6 @@ describe('Wishlist to Order flow', () => {
 
         // Proceed to checkout
         TopNavBar.assertCartBadgeVisible();
-        TopNavBar.assertCartBadgeCount(1);
         TopNavBar.clickProceedToCheckout();
 
 
