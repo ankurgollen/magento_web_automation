@@ -69,7 +69,7 @@ Test data is maintained in:
 #### Run all tests:
 
 ```bash
-npx cypress run --env username=testaccount002@email.com password=Password123
+npx cypress run --env username=testaccount002@email.com,password=Password123
 ```
 
 This will:

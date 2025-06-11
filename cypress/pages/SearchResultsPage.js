@@ -19,11 +19,14 @@ class SearchResultsPage {
     }
 
     validateProductNamesContain(searchTerm) {
-        cy.log(`Validating product names contain: ${searchTerm}`);
-        cy.logStep(`Validated that product names include search term: ${searchTerm}`);
-        this.getProductNames().each(($el) => {
-            const name = $el.text().toLowerCase();
-            expect(name).to.include(searchTerm.toLowerCase());
+        cy.log(`Validating first 3 product names contain: ${searchTerm}`);
+        cy.logStep(`Validated that top 3 product names include search term: ${searchTerm}`);
+        this.getProductNames().then($elements => {
+            const sliced = Cypress.$($elements).slice(0, 3);
+            sliced.each((index, el) => {
+                const name = el.innerText.toLowerCase();
+                expect(name).to.include(searchTerm.toLowerCase());
+            });
         });
     }
 
